@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import StartScreen from './components/StartScreen';
 import GameScreen from './components/GameScreen';
 import SettingsModal from './components/SettingsModal';
-import { initAudio, setMuted, sfx } from './game/audio';
+import { initAudio, setMuted, setMusicVolume, setSfxVolume, sfx } from './game/audio';
 import { loadHighScore, loadSettings, saveHighScore, saveSettings, type Settings } from './game/storage';
 
 export default function App() {
@@ -13,6 +13,8 @@ export default function App() {
 
   useEffect(() => {
     setMuted(settings.muted);
+    setMusicVolume(settings.musicVolume);
+    setSfxVolume(settings.sfxVolume);
     saveSettings(settings);
   }, [settings]);
 

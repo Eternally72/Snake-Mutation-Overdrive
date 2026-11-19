@@ -92,7 +92,9 @@ export default function StartScreen({ highScore, onStart, onOpenSettings }: Prop
     <div className="start-screen">
       <canvas ref={bgRef} className="start-bg" />
       <div className="start-content">
-        <div className="start-badge">ROGUELIKE · 基因吞噬 · 连续进化</div>
+        <div className="start-badge">
+          <span className="badge-dot" /> 实验体 OVD-01 // 基因吞噬 · 连续进化
+        </div>
         <h1 className="start-title">
           <span className="title-snake">贪吃蛇</span>
           <span className="title-colon">：</span>
@@ -102,13 +104,13 @@ export default function StartScreen({ highScore, onStart, onOpenSettings }: Prop
 
         <div className="gene-legend">
           <div className="gene-item gene-red">
-            <span className="gene-dot" /> 狂热 · 高分爆发
+            <span className="gene-dot" /> 狂热 · 高分爆发 <span className="gene-code">G-01</span>
           </div>
           <div className="gene-item gene-blue">
-            <span className="gene-dot" /> 幻影 · 护盾减速
+            <span className="gene-dot" /> 幻影 · 护盾减速 <span className="gene-code">G-02</span>
           </div>
           <div className="gene-item gene-green">
-            <span className="gene-dot" /> 蜕变 · 生长重构
+            <span className="gene-dot" /> 蜕变 · 生长重构 <span className="gene-code">G-03</span>
           </div>
         </div>
 
@@ -130,7 +132,7 @@ export default function StartScreen({ highScore, onStart, onOpenSettings }: Prop
         </div>
 
         <div className="start-footer">
-          <span className="highscore-chip">最高分 {highScore.toLocaleString()}</span>
+          <span className="highscore-chip">最高分 <b>{highScore.toLocaleString()}</b></span>
           <button className="btn-ghost" onClick={onOpenSettings}>
             ⚙ 设置
           </button>

@@ -63,7 +63,7 @@ describe('UI 冒烟测试', () => {
     const { container } = await mount(
       React.createElement(GameScreen, {
         highScore: 0,
-        settings: { muted: true, reducedMotion: false },
+        settings: { muted: true, reducedMotion: false, musicVolume: 0.5, sfxVolume: 0.8 },
         onGameEnd: () => {},
         onExit: () => {},
       }),
@@ -105,6 +105,7 @@ describe('UI 冒烟测试', () => {
     const card = container.querySelector('.upgrade-card') as HTMLElement;
     await act(async () => {
       card.click();
+      await new Promise((r) => setTimeout(r, 260));
     });
     expect(chosen).toBe('redAmp');
   });
@@ -120,6 +121,7 @@ describe('UI 冒烟测试', () => {
           maxLength: 22,
           evolutions: 2,
           timeAlive: 95,
+          bossesKilled: 1,
           upgrades: [{ id: 'chainAmp', level: 2 }],
         },
         highScore: 999,

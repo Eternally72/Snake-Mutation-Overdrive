@@ -37,6 +37,10 @@ export default function GameOverModal({ stats, highScore, isNewRecord, victory, 
           <span>完全进化</span>
           <b>{stats.evolutions} 次</b>
         </div>
+        <div className="final-item">
+          <span>击杀 Boss</span>
+          <b>{stats.bossesKilled} 个</b>
+        </div>
       </div>
 
       {stats.upgrades.length > 0 && (
